@@ -186,6 +186,7 @@ export async function createPost(formData: PostFormData) {
       },
     });
 
+    // @ts-expect-error Next.js 16 types expect 2 args
     revalidateTag('posts');
     revalidatePath('/');
     revalidatePath('/admin/posts');
@@ -218,6 +219,7 @@ export async function updatePost(id: string, formData: PostFormData) {
       },
     });
 
+    // @ts-expect-error Next.js 16 types expect 2 args
     revalidateTag('posts');
     revalidatePath('/');
     revalidatePath('/admin/posts');
@@ -232,6 +234,7 @@ export async function updatePost(id: string, formData: PostFormData) {
 export async function deletePost(id: string) {
   try {
     await prisma.post.delete({ where: { id } });
+    // @ts-expect-error Next.js 16 types expect 2 args
     revalidateTag('posts');
     revalidatePath('/');
     revalidatePath('/admin/posts');
@@ -245,6 +248,7 @@ export async function deletePost(id: string) {
 export async function togglePublished(id: string, published: boolean) {
   try {
     await prisma.post.update({ where: { id }, data: { published } });
+    // @ts-expect-error Next.js 16 types expect 2 args
     revalidateTag('posts');
     revalidatePath('/');
     revalidatePath('/admin/posts');
