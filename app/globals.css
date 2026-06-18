@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-bricolage), "Space Grotesk", system-ui, sans-serif;
+  
+  --color-brutal-yellow: #fde047;
+  --color-brutal-green: #4ade80;
+  --color-brutal-pink: #f472b6;
+  --color-brutal-blue: #60a5fa;
+  --color-brutal-red: #f87171;
+}
+
+:root {
+  --brutal-border-color: #000000;
+  --brutal-shadow-color: #000000;
+  --brutal-bg: #ffffff;
+}
+
+.dark {
+  --brutal-border-color: #ffffff;
+  --brutal-shadow-color: #ffffff;
+  --brutal-bg: #000000;
+}
+
+/* Scrollbar Styling - Brutalist */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+  border-left: 2px solid var(--brutal-border-color);
+}
+::-webkit-scrollbar-track {
+  background: var(--brutal-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brutal-border-color);
+  border: 2px solid var(--brutal-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fde047; /* Yellow hover */
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 4px solid #fde047;
+  outline-offset: 0px;
+}
+
+/* Brutal Utilities */
+.brutal-border {
+  border: 3px solid var(--brutal-border-color);
+}
+
+.brutal-shadow {
+  box-shadow: 6px 6px 0px 0px var(--brutal-shadow-color);
+  transition: all 0.2s ease-in-out;
+}
+
+.brutal-shadow-hover:hover {
+  transform: translate(6px, 6px);
+  box-shadow: 0px 0px 0px 0px var(--brutal-shadow-color);
+}
+
+/* No rounded corners globally for brutalism */
+* {
+  border-radius: 0 !important;
+}
